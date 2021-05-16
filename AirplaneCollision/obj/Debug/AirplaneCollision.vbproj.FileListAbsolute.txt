@@ -1,0 +1,22 @@
+C:\Develop\Projects\Airplane\AirplaneCollision\AirplaneCollision\bin\Debug\AirplaneCollision.exe
+C:\Develop\Projects\Airplane\AirplaneCollision\AirplaneCollision\bin\Debug\AirplaneCollision.pdb
+C:\Develop\Projects\Airplane\AirplaneCollision\AirplaneCollision\bin\Debug\AirplaneCollision.xml
+C:\Develop\Projects\Airplane\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.vbprojAssemblyReference.cache
+C:\Develop\Projects\Airplane\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.Form1.resources
+C:\Develop\Projects\Airplane\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.Resources.resources
+C:\Develop\Projects\Airplane\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.vbproj.GenerateResource.cache
+C:\Develop\Projects\Airplane\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.vbproj.CoreCompileInputs.cache
+C:\Develop\Projects\Airplane\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.exe
+C:\Develop\Projects\Airplane\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.xml
+C:\Develop\Projects\Airplane\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.pdb
+C:\Develop\Projects\Nueva carpeta\AirplaneCollision\AirplaneCollision\bin\Debug\AirplaneCollision.exe
+C:\Develop\Projects\Nueva carpeta\AirplaneCollision\AirplaneCollision\bin\Debug\AirplaneCollision.pdb
+C:\Develop\Projects\Nueva carpeta\AirplaneCollision\AirplaneCollision\bin\Debug\AirplaneCollision.xml
+C:\Develop\Projects\Nueva carpeta\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.vbprojAssemblyReference.cache
+C:\Develop\Projects\Nueva carpeta\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.Form1.resources
+C:\Develop\Projects\Nueva carpeta\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.Resources.resources
+C:\Develop\Projects\Nueva carpeta\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.vbproj.GenerateResource.cache
+C:\Develop\Projects\Nueva carpeta\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.vbproj.CoreCompileInputs.cache
+C:\Develop\Projects\Nueva carpeta\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.exe
+C:\Develop\Projects\Nueva carpeta\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.xml
+C:\Develop\Projects\Nueva carpeta\AirplaneCollision\AirplaneCollision\obj\Debug\AirplaneCollision.pdb
