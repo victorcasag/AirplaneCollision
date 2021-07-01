@@ -41,7 +41,15 @@ Public Class Form1
 
         y = r * Math.Sin(o)
 
+        MsgBox(Math.Sin(o))
+
         Return Math.Round(y, 2)
+    End Function
+
+    Private Function CalcularCoeficienteAngular(ByVal direcao As Double)
+
+        Return Math.Round(Math.Tan(direcao), 2)
+
     End Function
 
     Private Sub ValidForm()
@@ -70,13 +78,50 @@ Public Class Form1
 
     End Sub
 
+    Private Sub CleanForm()
+        TextBoxX.Text = ""
+        TextBoxY.Text = ""
+        TextBoxRaio.Text = ""
+        TextBoxAngulo.Text = ""
+        TextBoxVelocidade.Text = ""
+        TextBoxDirecao.Text = ""
+        TextBoxXEscalonar.Text = ""
+        TextBoxYEscalonar.Text = ""
+        TextBoxXTranslandar.Text = ""
+        TextBoxYTranslandar.Text = ""
+    End Sub
+
+    Private Sub CalcularEquaçãoY(ByVal x As Double, ByVal y As Double, ByVal direcao As Double)
+
+        Dim y1 As Double = 0
+
+        Dim x1 As Double = 1
+
+        Dim m As Double = CalcularCoeficienteAngular(direcao)
+
+        Dim resultY As Double = 0
+
+        Dim resultX As Double = 0
+
+        Dim resultTotal As Double = 0
+
+        '(yi-Y) = m(xi-X)
+
+        'yi = m (xi - x + y)
+
+        'y1 = m * x
+
+        'y1 = m * (x1 - x)
+
+
+    End Sub
+
     'End Functions
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonInsertPlane.Click
+    Private Sub ButtonInsertPlane_Click(sender As Object, e As EventArgs) Handles ButtonInsertPlane.Click
         Dim objAviao As New aviao.Aviao
 
         Try
-
 
             flag = False
             ValidForm()
@@ -94,7 +139,7 @@ Public Class Form1
 
             listAviao.Add(objAviao)
 
-            RotateImage(objAviao.ImageAviao, objAviao.Direcao)
+            'RotateImage(objAviao.ImageAviao, objAviao.Direcao)
 
             BindingSourceAviao.DataSource = Nothing
             BindingSourceAviao.DataSource = listAviao
@@ -103,6 +148,9 @@ Public Class Form1
 
             DataGridViewDadosAviao.Refresh()
             Panel1.Refresh()
+
+            CleanForm()
+            count += 1
 
         Catch ex As Exception
             MsgBox("Erro: " + ex.Message)
@@ -113,15 +161,19 @@ Public Class Form1
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
         Dim m As New Matrix()
+        Dim image As Image = Image.FromFile("C:\Users\victo\Downloads\ponto (1).png")
+
+        e.Graphics.DrawImage(image, 248, 186)
 
         If flag Then
 
-            count += 1
             For Each objAviao In listAviao
 
                 ' m.Rotate(objAviao.Direcao)
 
                 'e.Graphics.Transform = m
+
+
 
                 e.Graphics.DrawImage(objAviao.ImageAviao, objAviao.X, objAviao.Y)
 
@@ -132,25 +184,105 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles ButtonTranslandar.Click
+    Private Sub ButtonTranslandar_Click(sender As Object, e As EventArgs) Handles ButtonTranslandar.Click
 
-        Dim row As DataGridViewRow
+        Dim listLocalAviao As New List(Of aviao.Aviao)
 
-        row = DataGridViewDadosAviao.Rows
+        listLocalAviao.AddRange(listAviao)
 
-        'For Each row As DataGridViewRow In DataGridViewDadosAviao.Rows
+        For Each objAviao In listAviao
+            If objAviao.IsValid Then
 
+                With objAviao
+                    .ID = count
+                    .X = TextBoxXTranslandar.Text + objAviao.X
+                    .Y = TextBoxYTranslandar.Text + objAviao.Y
+                    .Raio = CalcularRaio(objAviao.X, objAviao.Y)
+                    .Angulo = CalcularAngulo(objAviao.X, objAviao.Y)
+                    .Velocidade = objAviao.Velocidade
+                    .ImageAviao = objAviao.ImageAviao
+                    .IsValid = False
+                End With
+
+
+                listLocalAviao.Add(objAviao)
+
+
+                listLocalAviao.RemoveAll(Function(x) x.IsValid = True)
+
+
+                BindingSourceAviao.DataSource = Nothing
+                BindingSourceAviao.DataSource = listLocalAviao
+
+                Panel1.Invalidate()
+
+                DataGridViewDadosAviao.Refresh()
+                Panel1.Refresh()
+                CleanForm()
+                count += 1
+            End If
+        Next
+    End Sub
+
+    Private Sub ButtonEscalonar_Click(sender As Object, e As EventArgs) Handles ButtonEscalonar.Click
+        Dim listLocalAviao As New List(Of aviao.Aviao)
+
+        listLocalAviao.AddRange(listAviao)
+
+        For Each objAviao In listAviao
+            If objAviao.IsValid Then
+
+                With objAviao
+                    .ID = count
+                    .X = (TextBoxXEscalonar.Text / 100) + objAviao.X
+                    .Y = (TextBoxYEscalonar.Text / 100) + objAviao.Y
+                    .Raio = CalcularRaio(objAviao.X, objAviao.Y)
+                    .Angulo = CalcularAngulo(objAviao.X, objAviao.Y)
+                    .Velocidade = objAviao.Velocidade
+                    .ImageAviao = objAviao.ImageAviao
+                    .IsValid = False
+                End With
+
+
+                listLocalAviao.Add(objAviao)
+
+
+                listLocalAviao.RemoveAll(Function(x) x.IsValid = True)
+
+
+                BindingSourceAviao.DataSource = Nothing
+                BindingSourceAviao.DataSource = listLocalAviao
+
+                Panel1.Invalidate()
+
+                DataGridViewDadosAviao.Refresh()
+                Panel1.Refresh()
+                CleanForm()
+                count += 1
+            End If
+        Next
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Panel1.Invalidate()
+        CalcularEquaçãoY(1, 2, 45)
+        'Panel1.SetBounds(0, 0, 248, 186)
+
+        'Panel1.Location = New Point((Me.Width / 2) - (Panel1.Width / 2), (Me.Height / 2) - (Panel1.Height / 2))
+
+    End Sub
+
+    Private Sub ButtonRotaColisão_Click(sender As Object, e As EventArgs) Handles ButtonRotaColisão.Click
+
+        Dim list As New List(Of String)
+        Dim count As Double = 0
+
+        'For Each objAviao In listAviao
+        '    If objAviao.IsValid and count <= 10 Then
+        '        count += count
+        '        list.Add(CalcularEquaçãoY(objAviao.x,objAviao.y,objAviao.direcao))   
+        '    End If
         'Next
-
-        Select Case row
-
-            Case 
-
-
-
-        End Select
-
-
 
     End Sub
 End Class

@@ -25,6 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ButtonRemoveRow = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -40,16 +41,17 @@ Partial Class Form1
         Me.TextBoxX = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ButtonEscalonar = New System.Windows.Forms.Button()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TextBoxXEscalonar = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBoxYEscalonar = New System.Windows.Forms.TextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBoxXTranslandar = New System.Windows.Forms.TextBox()
         Me.ButtonTranslandar = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBoxYTranslandar = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -96,6 +98,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ButtonRemoveRow)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -115,6 +118,15 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Inserir Dados"
+        '
+        'ButtonRemoveRow
+        '
+        Me.ButtonRemoveRow.Location = New System.Drawing.Point(41, 133)
+        Me.ButtonRemoveRow.Name = "ButtonRemoveRow"
+        Me.ButtonRemoveRow.Size = New System.Drawing.Size(104, 35)
+        Me.ButtonRemoveRow.TabIndex = 19
+        Me.ButtonRemoveRow.Text = "Remove"
+        Me.ButtonRemoveRow.UseVisualStyleBackColor = True
         '
         'Label6
         '
@@ -175,7 +187,7 @@ Partial Class Form1
         Me.ButtonInsertPlane.Location = New System.Drawing.Point(240, 133)
         Me.ButtonInsertPlane.Name = "ButtonInsertPlane"
         Me.ButtonInsertPlane.Size = New System.Drawing.Size(104, 35)
-        Me.ButtonInsertPlane.TabIndex = 12
+        Me.ButtonInsertPlane.TabIndex = 6
         Me.ButtonInsertPlane.Text = "Inserir"
         Me.ButtonInsertPlane.UseVisualStyleBackColor = True
         '
@@ -184,42 +196,42 @@ Partial Class Form1
         Me.TextBoxRaio.Location = New System.Drawing.Point(107, 56)
         Me.TextBoxRaio.Name = "TextBoxRaio"
         Me.TextBoxRaio.Size = New System.Drawing.Size(45, 20)
-        Me.TextBoxRaio.TabIndex = 11
+        Me.TextBoxRaio.TabIndex = 2
         '
         'TextBoxY
         '
         Me.TextBoxY.Location = New System.Drawing.Point(299, 30)
         Me.TextBoxY.Name = "TextBoxY"
         Me.TextBoxY.Size = New System.Drawing.Size(45, 20)
-        Me.TextBoxY.TabIndex = 10
+        Me.TextBoxY.TabIndex = 1
         '
         'TextBoxAngulo
         '
         Me.TextBoxAngulo.Location = New System.Drawing.Point(299, 56)
         Me.TextBoxAngulo.Name = "TextBoxAngulo"
         Me.TextBoxAngulo.Size = New System.Drawing.Size(45, 20)
-        Me.TextBoxAngulo.TabIndex = 9
+        Me.TextBoxAngulo.TabIndex = 3
         '
         'TextBoxDirecao
         '
         Me.TextBoxDirecao.Location = New System.Drawing.Point(299, 82)
         Me.TextBoxDirecao.Name = "TextBoxDirecao"
         Me.TextBoxDirecao.Size = New System.Drawing.Size(45, 20)
-        Me.TextBoxDirecao.TabIndex = 8
+        Me.TextBoxDirecao.TabIndex = 5
         '
         'TextBoxVelocidade
         '
         Me.TextBoxVelocidade.Location = New System.Drawing.Point(107, 82)
         Me.TextBoxVelocidade.Name = "TextBoxVelocidade"
         Me.TextBoxVelocidade.Size = New System.Drawing.Size(45, 20)
-        Me.TextBoxVelocidade.TabIndex = 7
+        Me.TextBoxVelocidade.TabIndex = 4
         '
         'TextBoxX
         '
         Me.TextBoxX.Location = New System.Drawing.Point(107, 30)
         Me.TextBoxX.Name = "TextBoxX"
         Me.TextBoxX.Size = New System.Drawing.Size(45, 20)
-        Me.TextBoxX.TabIndex = 6
+        Me.TextBoxX.TabIndex = 0
         '
         'GroupBox2
         '
@@ -235,17 +247,27 @@ Partial Class Form1
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.Label18)
         Me.GroupBox5.Controls.Add(Me.Label9)
         Me.GroupBox5.Controls.Add(Me.ButtonEscalonar)
-        Me.GroupBox5.Controls.Add(Me.TextBox10)
+        Me.GroupBox5.Controls.Add(Me.TextBoxXEscalonar)
         Me.GroupBox5.Controls.Add(Me.Label10)
-        Me.GroupBox5.Controls.Add(Me.TextBox9)
+        Me.GroupBox5.Controls.Add(Me.TextBoxYEscalonar)
         Me.GroupBox5.Location = New System.Drawing.Point(180, 17)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(164, 93)
-        Me.GroupBox5.TabIndex = 38
+        Me.GroupBox5.TabIndex = 1
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Escalonar"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(2, 50)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(34, 13)
+        Me.Label18.TabIndex = 27
+        Me.Label18.Text = "UN %"
         '
         'Label9
         '
@@ -261,16 +283,16 @@ Partial Class Form1
         Me.ButtonEscalonar.Location = New System.Drawing.Point(37, 50)
         Me.ButtonEscalonar.Name = "ButtonEscalonar"
         Me.ButtonEscalonar.Size = New System.Drawing.Size(97, 31)
-        Me.ButtonEscalonar.TabIndex = 37
+        Me.ButtonEscalonar.TabIndex = 2
         Me.ButtonEscalonar.Text = "Escalonar"
         Me.ButtonEscalonar.UseVisualStyleBackColor = True
         '
-        'TextBox10
+        'TextBoxXEscalonar
         '
-        Me.TextBox10.Location = New System.Drawing.Point(35, 21)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(45, 20)
-        Me.TextBox10.TabIndex = 23
+        Me.TextBoxXEscalonar.Location = New System.Drawing.Point(35, 21)
+        Me.TextBoxXEscalonar.Name = "TextBoxXEscalonar"
+        Me.TextBoxXEscalonar.Size = New System.Drawing.Size(45, 20)
+        Me.TextBoxXEscalonar.TabIndex = 0
         '
         'Label10
         '
@@ -281,40 +303,40 @@ Partial Class Form1
         Me.Label10.TabIndex = 25
         Me.Label10.Text = "X:"
         '
-        'TextBox9
+        'TextBoxYEscalonar
         '
-        Me.TextBox9.Location = New System.Drawing.Point(108, 21)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(45, 20)
-        Me.TextBox9.TabIndex = 24
+        Me.TextBoxYEscalonar.Location = New System.Drawing.Point(108, 21)
+        Me.TextBoxYEscalonar.Name = "TextBoxYEscalonar"
+        Me.TextBoxYEscalonar.Size = New System.Drawing.Size(45, 20)
+        Me.TextBoxYEscalonar.TabIndex = 1
         '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.TextBox8)
+        Me.GroupBox6.Controls.Add(Me.TextBoxXTranslandar)
         Me.GroupBox6.Controls.Add(Me.ButtonTranslandar)
         Me.GroupBox6.Controls.Add(Me.Label8)
-        Me.GroupBox6.Controls.Add(Me.TextBox6)
+        Me.GroupBox6.Controls.Add(Me.TextBoxYTranslandar)
         Me.GroupBox6.Controls.Add(Me.Label7)
         Me.GroupBox6.Location = New System.Drawing.Point(6, 19)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(164, 91)
-        Me.GroupBox6.TabIndex = 39
+        Me.GroupBox6.TabIndex = 0
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Traslacender"
         '
-        'TextBox8
+        'TextBoxXTranslandar
         '
-        Me.TextBox8.Location = New System.Drawing.Point(32, 19)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(45, 20)
-        Me.TextBox8.TabIndex = 19
+        Me.TextBoxXTranslandar.Location = New System.Drawing.Point(32, 19)
+        Me.TextBoxXTranslandar.Name = "TextBoxXTranslandar"
+        Me.TextBoxXTranslandar.Size = New System.Drawing.Size(45, 20)
+        Me.TextBoxXTranslandar.TabIndex = 0
         '
         'ButtonTranslandar
         '
         Me.ButtonTranslandar.Location = New System.Drawing.Point(35, 48)
         Me.ButtonTranslandar.Name = "ButtonTranslandar"
         Me.ButtonTranslandar.Size = New System.Drawing.Size(97, 31)
-        Me.ButtonTranslandar.TabIndex = 36
+        Me.ButtonTranslandar.TabIndex = 2
         Me.ButtonTranslandar.Text = "Translandar"
         Me.ButtonTranslandar.UseVisualStyleBackColor = True
         '
@@ -327,12 +349,12 @@ Partial Class Form1
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "X:"
         '
-        'TextBox6
+        'TextBoxYTranslandar
         '
-        Me.TextBox6.Location = New System.Drawing.Point(107, 19)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(45, 20)
-        Me.TextBox6.TabIndex = 20
+        Me.TextBoxYTranslandar.Location = New System.Drawing.Point(107, 19)
+        Me.TextBoxYTranslandar.Name = "TextBoxYTranslandar"
+        Me.TextBoxYTranslandar.Size = New System.Drawing.Size(45, 20)
+        Me.TextBoxYTranslandar.TabIndex = 1
         '
         'Label7
         '
@@ -356,9 +378,9 @@ Partial Class Form1
         Me.GroupBox7.Location = New System.Drawing.Point(6, 120)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(338, 86)
-        Me.GroupBox7.TabIndex = 40
+        Me.GroupBox7.TabIndex = 2
         Me.GroupBox7.TabStop = False
-        Me.GroupBox7.Text = "Traslacender"
+        Me.GroupBox7.Text = "Rotacionar"
         '
         'Label12
         '
@@ -374,23 +396,24 @@ Partial Class Form1
         Me.TextBox13.Location = New System.Drawing.Point(198, 43)
         Me.TextBox13.Name = "TextBox13"
         Me.TextBox13.Size = New System.Drawing.Size(45, 20)
-        Me.TextBox13.TabIndex = 31
+        Me.TextBox13.TabIndex = 1
+        Me.TextBox13.Text = "0"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(35, 19)
+        Me.Label11.Location = New System.Drawing.Point(31, 19)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(43, 13)
+        Me.Label11.Size = New System.Drawing.Size(47, 13)
         Me.Label11.TabIndex = 29
-        Me.Label11.Text = "Ângulo:"
+        Me.Label11.Text = "Direção:"
         '
         'ButtonRotacionar
         '
         Me.ButtonRotacionar.Location = New System.Drawing.Point(32, 46)
         Me.ButtonRotacionar.Name = "ButtonRotacionar"
         Me.ButtonRotacionar.Size = New System.Drawing.Size(97, 31)
-        Me.ButtonRotacionar.TabIndex = 35
+        Me.ButtonRotacionar.TabIndex = 3
         Me.ButtonRotacionar.Text = "Rotacionar"
         Me.ButtonRotacionar.UseVisualStyleBackColor = True
         '
@@ -408,7 +431,7 @@ Partial Class Form1
         Me.TextBox11.Location = New System.Drawing.Point(81, 16)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(45, 20)
-        Me.TextBox11.TabIndex = 28
+        Me.TextBox11.TabIndex = 0
         '
         'Label13
         '
@@ -424,7 +447,8 @@ Partial Class Form1
         Me.TextBox12.Location = New System.Drawing.Point(273, 43)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(45, 20)
-        Me.TextBox12.TabIndex = 32
+        Me.TextBox12.TabIndex = 2
+        Me.TextBox12.Text = "0"
         '
         'GroupBox3
         '
@@ -442,16 +466,16 @@ Partial Class Form1
         Me.GroupBox3.Location = New System.Drawing.Point(6, 427)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(607, 143)
-        Me.GroupBox3.TabIndex = 2
+        Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Funções de Rastreamento"
+        Me.GroupBox3.Text = "Distancias"
         '
         'TextBox16
         '
         Me.TextBox16.Location = New System.Drawing.Point(542, 44)
         Me.TextBox16.Name = "TextBox16"
         Me.TextBox16.Size = New System.Drawing.Size(45, 20)
-        Me.TextBox16.TabIndex = 44
+        Me.TextBox16.TabIndex = 2
         '
         'Label17
         '
@@ -467,7 +491,7 @@ Partial Class Form1
         Me.TextBox15.Location = New System.Drawing.Point(339, 44)
         Me.TextBox15.Name = "TextBox15"
         Me.TextBox15.Size = New System.Drawing.Size(45, 20)
-        Me.TextBox15.TabIndex = 42
+        Me.TextBox15.TabIndex = 1
         '
         'Label16
         '
@@ -492,14 +516,14 @@ Partial Class Form1
         Me.TextBox14.Location = New System.Drawing.Point(139, 44)
         Me.TextBox14.Name = "TextBox14"
         Me.TextBox14.Size = New System.Drawing.Size(45, 20)
-        Me.TextBox14.TabIndex = 39
+        Me.TextBox14.TabIndex = 0
         '
         'ButtonRotaColisão
         '
         Me.ButtonRotaColisão.Location = New System.Drawing.Point(467, 101)
         Me.ButtonRotaColisão.Name = "ButtonRotaColisão"
         Me.ButtonRotaColisão.Size = New System.Drawing.Size(120, 31)
-        Me.ButtonRotaColisão.TabIndex = 38
+        Me.ButtonRotaColisão.TabIndex = 5
         Me.ButtonRotaColisão.Text = "Em Rota de Colisão"
         Me.ButtonRotaColisão.UseVisualStyleBackColor = True
         '
@@ -508,7 +532,7 @@ Partial Class Form1
         Me.ButtonAviõesProximos.Location = New System.Drawing.Point(288, 97)
         Me.ButtonAviõesProximos.Name = "ButtonAviõesProximos"
         Me.ButtonAviõesProximos.Size = New System.Drawing.Size(96, 31)
-        Me.ButtonAviõesProximos.TabIndex = 37
+        Me.ButtonAviõesProximos.TabIndex = 4
         Me.ButtonAviõesProximos.Text = "Aviões Proximos"
         Me.ButtonAviõesProximos.UseVisualStyleBackColor = True
         '
@@ -517,7 +541,7 @@ Partial Class Form1
         Me.ButtonAviõesAeroportos.Location = New System.Drawing.Point(8, 97)
         Me.ButtonAviõesAeroportos.Name = "ButtonAviõesAeroportos"
         Me.ButtonAviõesAeroportos.Size = New System.Drawing.Size(176, 31)
-        Me.ButtonAviõesAeroportos.TabIndex = 36
+        Me.ButtonAviõesAeroportos.TabIndex = 3
         Me.ButtonAviõesAeroportos.Text = "Aviões proximos ao Aeroporto"
         Me.ButtonAviõesAeroportos.UseVisualStyleBackColor = True
         '
@@ -561,6 +585,7 @@ Partial Class Form1
         Me.DataGridViewDadosAviao.MultiSelect = False
         Me.DataGridViewDadosAviao.Name = "DataGridViewDadosAviao"
         Me.DataGridViewDadosAviao.RowHeadersVisible = False
+        Me.DataGridViewDadosAviao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewDadosAviao.Size = New System.Drawing.Size(454, 250)
         Me.DataGridViewDadosAviao.TabIndex = 4
         '
@@ -592,6 +617,7 @@ Partial Class Form1
         Me.XDataGridViewTextBoxColumn.DataPropertyName = "X"
         Me.XDataGridViewTextBoxColumn.HeaderText = "X"
         Me.XDataGridViewTextBoxColumn.Name = "XDataGridViewTextBoxColumn"
+        Me.XDataGridViewTextBoxColumn.ReadOnly = True
         Me.XDataGridViewTextBoxColumn.Width = 50
         '
         'YDataGridViewTextBoxColumn
@@ -692,13 +718,13 @@ Partial Class Form1
     Friend WithEvents ButtonTranslandar As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents TextBoxYEscalonar As TextBox
+    Friend WithEvents TextBoxXEscalonar As TextBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBoxXTranslandar As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBoxYTranslandar As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents GroupBox7 As GroupBox
     Friend WithEvents Label12 As Label
@@ -720,6 +746,7 @@ Partial Class Form1
     Friend WithEvents ButtonAviõesProximos As Button
     Friend WithEvents BindingSourceAviao As BindingSource
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents ButtonRemoveRow As Button
     Friend WithEvents IsValidDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
     Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents XDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -728,4 +755,5 @@ Partial Class Form1
     Friend WithEvents AnguloDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents VelocidadeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DirecaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Label18 As Label
 End Class
