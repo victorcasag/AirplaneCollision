@@ -9,7 +9,6 @@
         Public Property Direcao() As Double
         Public Property ImageAviao As Image
         Public Property IsValid() As Boolean
-
     End Class
 End Namespace
 

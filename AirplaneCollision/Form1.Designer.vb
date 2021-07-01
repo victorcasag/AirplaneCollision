@@ -73,9 +73,8 @@ Partial Class Form1
         Me.ButtonAviõesProximos = New System.Windows.Forms.Button()
         Me.ButtonAviõesAeroportos = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxReport = New System.Windows.Forms.RichTextBox()
         Me.DataGridViewDadosAviao = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.IsValidDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.XDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -85,6 +84,7 @@ Partial Class Form1
         Me.VelocidadeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DirecaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BindingSourceAviao = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -550,7 +550,7 @@ Partial Class Form1
         Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox4.Controls.Add(Me.RichTextBox1)
+        Me.GroupBox4.Controls.Add(Me.RichTextBoxReport)
         Me.GroupBox4.Location = New System.Drawing.Point(910, 274)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(454, 296)
@@ -558,16 +558,16 @@ Partial Class Form1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Relatório"
         '
-        'RichTextBox1
+        'RichTextBoxReport
         '
-        Me.RichTextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.RichTextBoxReport.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RichTextBox1.Location = New System.Drawing.Point(6, 19)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(437, 271)
-        Me.RichTextBox1.TabIndex = 0
-        Me.RichTextBox1.Text = ""
+        Me.RichTextBoxReport.Location = New System.Drawing.Point(6, 19)
+        Me.RichTextBoxReport.Name = "RichTextBoxReport"
+        Me.RichTextBoxReport.Size = New System.Drawing.Size(437, 271)
+        Me.RichTextBoxReport.TabIndex = 0
+        Me.RichTextBoxReport.Text = ""
         '
         'DataGridViewDadosAviao
         '
@@ -588,14 +588,6 @@ Partial Class Form1
         Me.DataGridViewDadosAviao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewDadosAviao.Size = New System.Drawing.Size(454, 250)
         Me.DataGridViewDadosAviao.TabIndex = 4
-        '
-        'Panel1
-        '
-        Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
-        Me.Panel1.Location = New System.Drawing.Point(371, 18)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(534, 403)
-        Me.Panel1.TabIndex = 5
         '
         'IsValidDataGridViewCheckBoxColumn
         '
@@ -664,6 +656,14 @@ Partial Class Form1
         '
         Me.BindingSourceAviao.DataSource = GetType(AirplaneCollision.aviao.Aviao)
         '
+        'Panel1
+        '
+        Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
+        Me.Panel1.Location = New System.Drawing.Point(371, 18)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(534, 403)
+        Me.Panel1.TabIndex = 5
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -713,7 +713,7 @@ Partial Class Form1
     Friend WithEvents TextBoxDirecao As TextBox
     Friend WithEvents TextBoxVelocidade As TextBox
     Friend WithEvents TextBoxX As TextBox
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents RichTextBoxReport As RichTextBox
     Friend WithEvents ButtonEscalonar As Button
     Friend WithEvents ButtonTranslandar As Button
     Friend WithEvents Label9 As Label

@@ -7,7 +7,7 @@ Public Class Form1
     Dim count = 1
 
     Dim listAviao As New List(Of aviao.Aviao)
-
+    Dim listColisao As New List(Of aviao.Colisao)
     'Functions
 
     Private Function CalcularRaio(x As Integer, y As Integer)
@@ -89,31 +89,6 @@ Public Class Form1
         TextBoxYEscalonar.Text = ""
         TextBoxXTranslandar.Text = ""
         TextBoxYTranslandar.Text = ""
-    End Sub
-
-    Private Sub CalcularEquaçãoY(ByVal x As Double, ByVal y As Double, ByVal direcao As Double)
-
-        Dim y1 As Double = 0
-
-        Dim x1 As Double = 1
-
-        Dim m As Double = CalcularCoeficienteAngular(direcao)
-
-        Dim resultY As Double = 0
-
-        Dim resultX As Double = 0
-
-        Dim resultTotal As Double = 0
-
-        '(yi-Y) = m(xi-X)
-
-        'yi = m (xi - x + y)
-
-        'y1 = m * x
-
-        'y1 = m * (x1 - x)
-
-
     End Sub
 
     'End Functions
@@ -265,7 +240,7 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         Panel1.Invalidate()
-        CalcularEquaçãoY(1, 2, 45)
+
         'Panel1.SetBounds(0, 0, 248, 186)
 
         'Panel1.Location = New Point((Me.Width / 2) - (Panel1.Width / 2), (Me.Height / 2) - (Panel1.Height / 2))
@@ -274,15 +249,47 @@ Public Class Form1
 
     Private Sub ButtonRotaColisão_Click(sender As Object, e As EventArgs) Handles ButtonRotaColisão.Click
 
-        Dim list As New List(Of String)
+        Dim objcolisao As New aviao.Colisao
         Dim count As Double = 0
+        Dim y2 As Double = 1
+        Dim x2 As Double = 1
+        Dim m As Double = 0
 
-        'For Each objAviao In listAviao
-        '    If objAviao.IsValid and count <= 10 Then
-        '        count += count
-        '        list.Add(CalcularEquaçãoY(objAviao.x,objAviao.y,objAviao.direcao))   
-        '    End If
-        'Next
+        Dim result As New List(Of Integer)
 
+        For Each objAviao In listAviao
+            If objAviao.IsValid And count <= 10 And listAviao.Count > 1 Then
+                count += count
+                m = CalcularCoeficienteAngular(objAviao.Direcao)
+                '(y2 - y) = m(x2 - x)
+
+                If objAviao.Y > 0 Then
+                    y2 = m * (-objAviao.X) + objAviao.Y
+                Else
+                    y2 = m * (-objAviao.X) - objAviao.Y
+                End If
+
+                With objcolisao
+                    .ID = objAviao.ID
+                    .Y2 = y2
+                    .X2 = m
+                End With
+
+                listColisao.Add(objcolisao)
+
+                If listColisao.Count > 1 Then
+                    For Each objColisionlist In listColisao
+
+                        'x2 = x | o numero = Y2
+
+                        result.Add(objColisionlist.X2 + objColisionlist.Y2)
+
+                    Next
+                End If
+
+                Dim totalResult As Integer = result.Sum()
+
+            End If
+        Next
     End Sub
 End Class
