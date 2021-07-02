@@ -8,6 +8,7 @@ Public Class Form1
 
     Dim listAviao As New List(Of aviao.Aviao)
     Dim listColisao As New List(Of aviao.Colisao)
+    Dim listResultColisao As New List(Of aviao.ReuladoColisao)
     'Functions
 
     Private Function CalcularRaio(x As Integer, y As Integer)
@@ -250,15 +251,21 @@ Public Class Form1
     Private Sub ButtonRotaColisão_Click(sender As Object, e As EventArgs) Handles ButtonRotaColisão.Click
 
         Dim objcolisao As New aviao.Colisao
+        Dim objResultColisao As New aviao.ReuladoColisao
         Dim count As Double = 0
         Dim y2 As Double = 1
         Dim x2 As Double = 1
         Dim m As Double = 0
-
+        Dim resultY As Double = 0
+        Dim d As Double = 0
+        Dim t As Double = 0
         Dim result As New List(Of Integer)
+        Dim listD As New List(Of Double)
+        Dim listT As New List(Of Double)
+
 
         For Each objAviao In listAviao
-            If objAviao.IsValid And count <= 10 And listAviao.Count > 1 Then
+            If objAviao.IsValid And count <= 10 Then
                 count += count
                 m = CalcularCoeficienteAngular(objAviao.Direcao)
                 '(y2 - y) = m(x2 - x)
@@ -277,7 +284,7 @@ Public Class Form1
 
                 listColisao.Add(objcolisao)
 
-                If listColisao.Count > 1 Then
+                If listColisao.Count = 2 Then
                     For Each objColisionlist In listColisao
 
                         'x2 = x | o numero = Y2
@@ -285,9 +292,46 @@ Public Class Form1
                         result.Add(objColisionlist.X2 + objColisionlist.Y2)
 
                     Next
+                    Dim totalResultX As Integer = result.Sum()
+                    RichTextBoxReport.Text &= vbCrLf + totalResultX
+
+                    resultY = totalResultX + objcolisao.Y2
+
+                    With objResultColisao
+                        .ID = objAviao.ID
+                        .X = totalResultX
+                        .Y = resultY
+                    End With
+                    listResultColisao.Add(objResultColisao)
+
+                    For Each objResultColisao In listResultColisao
+                        d = Math.Sqrt(Math.Pow(objResultColisao.X - objAviao.X, 2)) + (Math.Pow(objResultColisao.Y - objAviao.Y, 2))
+                        t = d / objAviao.Velocidade
+                        listD.Add(d)
+                        listT.Add(t)
+
+                        If listT.Count = 2 Then
+                            Dim diferenceT As Double = 0
+                            For Each objt In listT
+                                diferenceT -= t
+                            Next
+
+
+                        End If
+
+                        If TextBoxTimeColission.Text <= t Then
+
+                        End If
+                    Next
+
+
+
+
+
+
+                    result.Remove(2)
                 End If
 
-                Dim totalResult As Integer = result.Sum()
 
             End If
         Next

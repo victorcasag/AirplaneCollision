@@ -63,7 +63,7 @@ Partial Class Form1
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.TextBoxTimeColission = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.TextBox15 = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -85,6 +85,7 @@ Partial Class Form1
         Me.DirecaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BindingSourceAviao = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -454,7 +455,8 @@ Partial Class Form1
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox3.Controls.Add(Me.TextBox16)
+        Me.GroupBox3.Controls.Add(Me.Label19)
+        Me.GroupBox3.Controls.Add(Me.TextBoxTimeColission)
         Me.GroupBox3.Controls.Add(Me.Label17)
         Me.GroupBox3.Controls.Add(Me.TextBox15)
         Me.GroupBox3.Controls.Add(Me.Label16)
@@ -470,12 +472,12 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Distancias"
         '
-        'TextBox16
+        'TextBoxTimeColission
         '
-        Me.TextBox16.Location = New System.Drawing.Point(542, 44)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(45, 20)
-        Me.TextBox16.TabIndex = 2
+        Me.TextBoxTimeColission.Location = New System.Drawing.Point(542, 44)
+        Me.TextBoxTimeColission.Name = "TextBoxTimeColission"
+        Me.TextBoxTimeColission.Size = New System.Drawing.Size(45, 20)
+        Me.TextBoxTimeColission.TabIndex = 2
         '
         'Label17
         '
@@ -520,7 +522,7 @@ Partial Class Form1
         '
         'ButtonRotaColisão
         '
-        Me.ButtonRotaColisão.Location = New System.Drawing.Point(467, 101)
+        Me.ButtonRotaColisão.Location = New System.Drawing.Point(467, 97)
         Me.ButtonRotaColisão.Name = "ButtonRotaColisão"
         Me.ButtonRotaColisão.Size = New System.Drawing.Size(120, 31)
         Me.ButtonRotaColisão.TabIndex = 5
@@ -664,6 +666,15 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(534, 403)
         Me.Panel1.TabIndex = 5
         '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(473, 60)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(55, 13)
+        Me.Label19.TabIndex = 44
+        Me.Label19.Text = "Segundos"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -736,7 +747,7 @@ Partial Class Form1
     Friend WithEvents Label13 As Label
     Friend WithEvents TextBox12 As TextBox
     Friend WithEvents ButtonAviõesAeroportos As Button
-    Friend WithEvents TextBox16 As TextBox
+    Friend WithEvents TextBoxTimeColission As TextBox
     Friend WithEvents Label17 As Label
     Friend WithEvents TextBox15 As TextBox
     Friend WithEvents Label16 As Label
@@ -756,4 +767,5 @@ Partial Class Form1
     Friend WithEvents VelocidadeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DirecaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
 End Class
