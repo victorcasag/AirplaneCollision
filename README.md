@@ -1,4 +1,4 @@
-# Projeto de Cálculo de Colisão Aérea
+# Projeto de Cálculo de Colisão Aérea - UNESC
 
 Este projeto, desenvolvido em VB.NET 4.8, calcula e determina se aeronaves estão em rota de colisão. Utilizando informações sobre a posição, velocidade e direção das aeronaves, o programa analisa possíveis interseções e determina se uma colisão ocorrerá.
 
