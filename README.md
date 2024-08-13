@@ -1,36 +1,35 @@
-# Projeto de Cálculo de Colisão Aérea - UNESC
+# Air Collision Calculation Project - UNESC
 
-Este projeto, desenvolvido em VB.NET 4.8, calcula e determina se aeronaves estão em rota de colisão. Utilizando informações sobre a posição, velocidade e direção das aeronaves, o programa analisa possíveis interseções e determina se uma colisão ocorrerá.
+This project, developed in VB.NET 4.8, calculates and determines if aircraft are on a collision course. Using information about the position, speed, and direction of the aircraft, the program analyzes possible intersections and determines if a collision will occur.
 
-## Funcionalidades
+## Features
 
-- **CRUD de Aeronaves**: Permite criar, ler, atualizar e deletar dados de aeronaves.
-- **Cálculo de Posição e Ângulo**: Calcula o raio e o ângulo das aeronaves com base nas coordenadas fornecidas.
-- **Cálculo de Velocidade e Direção**: Permite inserir e analisar a velocidade e a direção das aeronaves.
-- **Análise de Colisão**: Determina se aeronaves estão em rota de colisão e calcula o tempo até a possível colisão.
-- **Visualização Gráfica**: As aeronaves são desenhadas em um painel para melhor visualização das rotas e direções.
+- **Aircraft CRUD**: Allows you to create, read, update, and delete aircraft data.
+- **Position and Angle Calculation**: Calculates the radius and angle of the aircraft based on the provided coordinates.
+- **Speed and Direction Calculation**: Allows the insertion and analysis of the aircraft's speed and direction.
+- **Collision Analysis**: Determines if aircraft are on a collision course and calculates the time until a possible collision.
+- **Graphic Visualization**: Aircraft are drawn on a panel for better visualization of routes and directions.
 
-## Como usar
+## How to Use
 
-1. Insira as informações das aeronaves (posição, raio, ângulo, velocidade e direção) nos campos de texto.
-2. Use os botões fornecidos para adicionar, transladar, ou escalonar as aeronaves no espaço.
-3. Pressione o botão de cálculo de colisão para verificar possíveis interseções entre as rotas das aeronaves.
+1. Enter the aircraft information (position, radius, angle, speed, and direction) into the text fields.
+2. Use the provided buttons to add, translate, or scale the aircraft in space.
+3. Press the collision calculation button to check for possible intersections between aircraft routes.
 
-## Estrutura do Projeto
+## Project Structure
 
-O projeto é composto por uma classe principal que gerencia a lógica do programa, incluindo funções para cálculo de ângulo, raio, coeficiente angular, e gerenciamento das listas de aeronaves e colisões.
+The project consists of a main class that manages the program's logic, including functions for angle calculation, radius, angular coefficient, and management of aircraft and collision lists.
 
-## Pré-requisitos
+## Prerequisites
 
-- **.NET Framework 4.8**: Certifique-se de que a versão 4.8 do .NET Framework esteja instalada no seu ambiente.
+- **.NET Framework 4.8**: Ensure that version 4.8 of the .NET Framework is installed in your environment.
 
-## Contribuições
+## Contributions
 
-Contribuições são bem-vindas! Sinta-se à vontade para enviar um pull request ou abrir uma issue para discutir possíveis melhorias ou correções.
+Contributions are welcome! Feel free to submit a pull request or open an issue to discuss possible improvements or fixes.
 
-## Licença
+## License
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 ---
-
